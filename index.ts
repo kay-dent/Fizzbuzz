@@ -6,6 +6,7 @@ const key: {[index: number]: string} = {
     3: 'Fizz',
     5: 'Buzz',
     7: 'Bang',
+
 }
 
 const fizzBuzz = () => {  
@@ -19,7 +20,7 @@ const fizzBuzz = () => {
         }
     })
 
-    let answer ='';
+    let answer: string = '';
 
     if (factors.length > 0) {
       for (let i = 0; i < factors.length; i++) {

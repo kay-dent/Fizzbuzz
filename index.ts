@@ -1,6 +1,6 @@
 function divisibleBy(num: number, divisor: number): boolean { return num % divisor == 0 };
 
-const possibleFactors = [3, 5, 7];
+const possibleFactors = [3, 5, 7, 11];
 
 const key: {[index: number]: Function } = {
     3: (answer: string) => answer += 'Fizz',
@@ -9,6 +9,10 @@ const key: {[index: number]: Function } = {
         if (answer.length < 5) {
            return answer += 'Bang'
         }
+    },
+    11: (answer: string) => {
+        answer = 'Bong';
+        return answer;
     }
 }
 

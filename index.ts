@@ -5,7 +5,7 @@ const possibleFactors = [3, 5, 7];
 const key: {[index: number]: string} = {
     3: 'Fizz',
     5: 'Buzz',
-    7: 'Bong'
+    7: 'Bang',
 }
 
 const fizzBuzz = () => {  

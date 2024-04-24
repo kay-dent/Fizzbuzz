@@ -2,11 +2,14 @@ function divisibleBy(num: number, divisor: number): boolean { return num % divis
 
 const possibleFactors = [3, 5, 7];
 
-const key: {[index: number]: string} = {
-    3: 'Fizz',
-    5: 'Buzz',
-    7: 'Bang',
-
+const key: {[index: number]: Function } = {
+    3: (answer: string) => answer += 'Fizz',
+    5: (answer: string) => answer += 'Buzz',
+    7: (answer: string) => {
+        if (answer.length < 5) {
+           return answer += 'Bang'
+        }
+    }
 }
 
 const fizzBuzz = () => {  
@@ -15,7 +18,6 @@ const fizzBuzz = () => {
 
     possibleFactors.forEach((num) => {
         if (divisibleBy(n, num)) {
-            console.log(`${n} is divisible by ${num}`)
             factors.push(num)
         }
     })
@@ -24,9 +26,7 @@ const fizzBuzz = () => {
 
     if (factors.length > 0) {
       for (let i = 0; i < factors.length; i++) {
-        if (answer.length < 5) {
-          answer += key[factors[i]]
-        }
+        answer = key[factors[i]](answer)
       }
     } else {
       answer = String(n)

@@ -1,6 +1,9 @@
-const fizzBuzz = () => {
+function divisbleByThree(num: number): boolean { return num % 3 == 0 };
+function divisibleByFive(num: number): boolean { return num % 5 == 0 };
+
+const fizzBuzz = () => {  
   for (let n = 0; n < 101; n++) {
-    if (n % 3 === 0 && n % 5 === 0) {
+    if (divisbleByThree(n) && divisibleByFive(n)) {
       console.log('FizzBuzz')
     } else if (n % 3 === 0) {
       console.log('Fizz')

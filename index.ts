@@ -1,6 +1,6 @@
 function divisibleBy(num: number, divisor: number): boolean { return num % divisor == 0 };
 
-const possibleFactors = [3, 5, 7, 11];
+const possibleFactors = [3, 5, 7, 11, 13];
 
 const key: {[index: number]: Function } = {
     3: (answer: string[]) => {
@@ -20,10 +20,21 @@ const key: {[index: number]: Function } = {
         } 
     },
     11: (answer: string[]) => answer = ['Bong'],
+    13: (answer: string[]) => {
+        let newAnswer: string[] = []
+        for (let i = 0; i < answer.length; i++) {
+            if (answer[i][0] == 'B') {
+                newAnswer.push('Fezz');
+            }
+            newAnswer.push(answer[i])
+        }
+        if (!newAnswer.includes('Fezz')) { newAnswer.push('Fezz') } 
+        return newAnswer;
+    }
 }
 
 const fizzBuzz = () => {  
-  for (let n = 0; n < 101; n++) {
+  for (let n = 0; n < 201; n++) {
     let factors: number[] = [];
 
     possibleFactors.forEach((num) => {

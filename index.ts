@@ -10,10 +10,7 @@ const key: {[index: number]: Function } = {
            return answer += 'Bang'
         }
     },
-    11: (answer: string) => {
-        answer = 'Bong';
-        return answer;
-    }
+    11: (answer: string) => answer = 'Bong'
 }
 
 const fizzBuzz = () => {  

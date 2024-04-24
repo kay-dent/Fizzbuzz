@@ -4,15 +4,18 @@ const fizzBuzz = () => {
   for (let n = 0; n < 101; n++) {
     const divisbleByThree: boolean = divisibleBy(n, 3);
     const divisibleByFive: boolean = divisibleBy(n, 5);
+
+    let answer = String(n)
+
     if (divisbleByThree && divisibleByFive) {
-      console.log('FizzBuzz')
+      answer = 'FizzBuzz'
     } else if (divisbleByThree) {
-      console.log('Fizz')
+      answer = 'Fizz'
     } else if (divisibleByFive) {
-      console.log('Buzz')
-    } else {
-      console.log(n);
-    }
+      answer = 'Buzz'
+    } 
+
+    console.log(answer);
   }
 }
 

@@ -1,13 +1,14 @@
-function divisbleByThree(num: number): boolean { return num % 3 == 0 };
-function divisibleByFive(num: number): boolean { return num % 5 == 0 };
+function divisibleBy(num: number, divisor: number): boolean { return num % divisor == 0 };
 
 const fizzBuzz = () => {  
   for (let n = 0; n < 101; n++) {
-    if (divisbleByThree(n) && divisibleByFive(n)) {
+    const divisbleByThree = divisibleBy(n, 3);
+    const divisibleByFive = divisibleBy(n, 5);
+    if (divisbleByThree && divisibleByFive) {
       console.log('FizzBuzz')
-    } else if (n % 3 === 0) {
+    } else if (divisbleByThree) {
       console.log('Fizz')
-    } else if (n % 5 == 0) {
+    } else if (divisibleByFive) {
       console.log('Buzz')
     } else {
       console.log(n);

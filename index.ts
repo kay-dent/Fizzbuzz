@@ -21,9 +21,7 @@ const key: {[index: number]: Function } = {
     13: (answer: string[]) => {
         let newAnswer: string[] = []
         for (let i = 0; i < answer.length; i++) {
-            if (answer[i][0] == 'B') {
-                newAnswer.push('Fezz');
-            }
+            if (answer[i][0] == 'B') { newAnswer.push('Fezz') };
             newAnswer.push(answer[i])
         }
         if (!newAnswer.includes('Fezz')) { newAnswer.push('Fezz') } 
@@ -35,21 +33,13 @@ const key: {[index: number]: Function } = {
 
 const fizzBuzz = () => {  
   for (let n = 0; n < 101; n++) {
-    let factors: number[] = [];
+    let answer: string[] = [];
 
     for (const num of Object.keys(key)) {
       if (divisibleBy(n, Number(num))) {
-        factors.push(Number(num))
+        answer = key[Number(num)](answer)
       }
     }
-
-    let answer: string[] = [];
-
-    if (factors.length > 0) {
-      for (let i = 0; i < factors.length; i++) {
-        answer = key[factors[i]](answer)
-      }
-    } 
 
     if (answer.length == 0) { answer.push(String(n))}
 

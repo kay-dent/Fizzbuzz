@@ -1,7 +1,5 @@
 function divisibleBy(num: number, divisor: number): boolean { return num % divisor == 0 };
 
-const possibleFactors = [3, 5, 7, 11, 13, 17];
-
 const key: {[index: number]: Function } = {
     3: (answer: string[]) => {
         answer.push('Fizz');
@@ -36,14 +34,14 @@ const key: {[index: number]: Function } = {
 }
 
 const fizzBuzz = () => {  
-  for (let n = 0; n < 260; n++) {
+  for (let n = 0; n < 101; n++) {
     let factors: number[] = [];
 
-    possibleFactors.forEach((num) => {
-        if (divisibleBy(n, num)) {
-            factors.push(num)
-        }
-    })
+    for (const num of Object.keys(key)) {
+      if (divisibleBy(n, Number(num))) {
+        factors.push(Number(num))
+      }
+    }
 
     let answer: string[] = [];
 

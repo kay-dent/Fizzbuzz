@@ -1,3 +1,7 @@
+const prompt = require("prompt-sync")({ sigint: true });
+const upperValue: string | null = prompt("What value would you like FizzBuzz to go up to? ");
+console.log(`We go up to ${upperValue}`);
+
 function divisibleBy(num: number, divisor: number): boolean { return num % divisor == 0 };
 
 const key: {[index: number]: Function } = {
@@ -31,8 +35,8 @@ const key: {[index: number]: Function } = {
 
 }
 
-const fizzBuzz = () => {  
-  for (let n = 0; n < 101; n++) {
+const fizzBuzz = (upperValue: string | null) => {  
+  for (let n = 0; n <= Number(upperValue); n++) {
     let answer: string[] = [];
 
     for (const num of Object.keys(key)) {
@@ -47,4 +51,4 @@ const fizzBuzz = () => {
   }
 }
 
-fizzBuzz();
+fizzBuzz(upperValue);
